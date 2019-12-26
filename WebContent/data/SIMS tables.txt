@@ -1,0 +1,116 @@
+create database SIMS14082015;
+use SIMS14082015
+
+create table course(course_id int not null auto_increment,
+course_name varchar(75) not null,
+fees double not null, primary key(course_id)) 
+auto_increment=0;
+insert into course(course_name,fees) values(" ",0.00);
+update course set course_id=0 where course_name=" ";
+insert into course(course_name,fees) values(" Electronics and Communication Engineering",81000.00);
+insert into course(course_name,fees) values(" Computer Sceince Engineering",80000.00);
+insert into course(course_name,fees) values(" Information Technology",83000.00);
+
+create table menu_rights_master(menu_rights_id int not null auto_increment,
+menu_rights_name varchar(75) not null,
+primary key(menu_rights_id));
+
+insert into menu_rights_master(menu_rights_name) values("Admin Panel");
+insert into menu_rights_master(menu_rights_name) values("Course & Examination Configuration");
+insert into menu_rights_master(menu_rights_name) values("Manage Student");
+insert into menu_rights_master(menu_rights_name) values("Fees Payment");
+insert into menu_rights_master(menu_rights_name) values("Examination");
+insert into menu_rights_master(menu_rights_name) values("Academic Report");
+insert into menu_rights_master(menu_rights_name) values(" ");
+
+create table designation(designation_id int not null auto_increment,
+designation_name varchar(50) not null,
+menu_rights_id int not null,
+primary key(designation_id),
+foreign key(menu_rights_id)references menu_rights_master(menu_rights_id))auto_increment=1;
+
+insert into designation(designation_name,menu_rights_id) values("Admin",1);
+insert into designation(designation_name,menu_rights_id) values("Accountant",4);
+insert into designation(designation_name,menu_rights_id) values("Office Staff",2);
+insert into designation(designation_name,menu_rights_id) values("Teaching Staff",5);
+
+create table usermaster(user_id int not null auto_increment,
+		username varchar(50) not null,
+		dob varchar(50) not null,
+		email varchar(50) not null unique,
+		password int not null,
+		course_id int not null,
+		designation_id int not null,
+		primary key(user_id),
+		foreign key(course_id) references course(course_id),
+		foreign key(designation_id) references designation(designation_id))
+		auto_increment=1001;
+
+insert into usermaster(username,dob,email,password,course_id,designation_id) 
+	values("Admin","15/06/1991","admin@gmail.com",1,0,1);
+insert into usermaster(username,dob,email,password,course_id,designation_id) 
+	values("Accountant","10/02/1991","accountant@gmail.com",1,0,2);
+insert into usermaster(username,dob,email,password,course_id,designation_id) 
+	values("OfficeStaff","05/11/1991","os@gmail.com",1,0,3);
+insert into usermaster(username,dob,email,password,course_id,designation_id) 
+	values("TeachingStaff","11/11/1991","ts@gmail.com",1,0,4);
+insert into usermaster(username,dob,email,password,course_id,designation_id) 
+	values("CBA","11/11/1991","abc@abc.com",1,2,5);
+
+create table payment(payment_id int not null auto_increment,
+		payment_date datetime not null,
+		paid_amount double not null,
+		user_id int not null,
+		primary key(payment_id),
+		foreign key(user_id) references usermaster(user_id));
+
+create table exammaster(exam_id int not null auto_increment,
+		exam_name varchar(50) not null,
+		primary key(exam_id));
+create table examresults(result_id int not null auto_increment,
+		subject_1 int not null,
+		subject_2 int not null,
+		subject_3 int not null,
+		subject_4 int not null,
+		subject_5 int not null,
+		total int not null,
+		exam_id int not null,
+		user_id int not null,
+		primary key(result_id),
+		foreign key(exam_id) references exammaster(exam_id),
+		foreign key(user_id) references usermaster(user_id));
+
+create table useraccess(useraccess_id int not null auto_increment,
+designation_id int not null,
+canread boolean not null,
+canedit boolean not null,
+cancreate boolean not null,
+candelete boolean not null,
+primary key(useraccess_id),
+foreign key(designation_id) references designation(designation_id));
+
+insert into useraccess(designation_id,canread,canedit,cancreate,candelete) values(1,1,1,1,1);
+insert into useraccess(designation_id,canread,canedit,cancreate,candelete) values(2,1,0,1,0);
+insert into useraccess(designation_id,canread,canedit,cancreate,candelete) values(3,1,0,1,0);
+insert into useraccess(designation_id,canread,canedit,cancreate,candelete) values(4,1,0,1,0);
+insert into useraccess(designation_id,canread,canedit,cancreate,candelete) values(5,0,0,0,0);
+
+create table usermenu_rights(usermenu_rights_id int not null auto_increment,
+designation_id int not null,
+menu_rights_id int not null,
+primary key(usermenu_rights_id),
+foreign key(designation_id) references designation(designation_id),
+foreign key(menu_rights_id) references menu_rights_master(menu_rights_id));
+
+insert into usermenu_rights(designation_id,menu_rights_id) values(1,1);
+insert into usermenu_rights(designation_id,menu_rights_id) values(1,2);
+insert into usermenu_rights(designation_id,menu_rights_id) values(1,3);
+insert into usermenu_rights(designation_id,menu_rights_id) values(1,4);
+insert into usermenu_rights(designation_id,menu_rights_id) values(1,5);
+insert into usermenu_rights(designation_id,menu_rights_id) values(1,6);
+insert into usermenu_rights(designation_id,menu_rights_id) values(2,4);
+insert into usermenu_rights(designation_id,menu_rights_id) values(4,5);
+insert into usermenu_rights(designation_id,menu_rights_id) values(4,6);
+insert into usermenu_rights(designation_id,menu_rights_id) values(3,2);
+insert into usermenu_rights(designation_id,menu_rights_id) values(3,3);
+insert into usermenu_rights(designation_id,menu_rights_id) values(5,7);

@@ -1,0 +1,63 @@
+@CHARSET "ISO-8859-1";
+.clearfix:after {
+content: ".";
+display:block;
+height:0;
+font-size:0;
+clear:both;
+visibility:hidden;
+}
+.clearfix {
+display:inline-block;
+}
+* html .clearfix {
+height:1%;
+}
+.clearfix {
+display:block;
+}
+.Bule_style_menu {
+background:url(images/top_menu_left.gif) no-repeat left top;
+padding-left:5px;
+}
+.Bule_style_menu ul {
+background:url(images/top_menu_right.gif) repeat right top;
+display:block;
+margin:0;
+padding:0;
+list-style:none;
+} 
+.Bule_style_menu ul li {
+display:inline;
+float:left;
+padding:4px 2px 4px 3px;
+background:url(images/menu_sp.gif) no-repeat left 16px;
+}
+.Bule_style_menu ul li.first {
+background-image:none;
+}
+.Bule_style_menu ul li a {
+display:inline;
+padding:0 0 0 5px;
+float:left;
+color:#FFFFFF;
+text-decoration:none;
+cursor:pointer
+}
+.Bule_style_menu ul li a span {
+display:inline;
+padding:0px 17px 0px 12px;
+float:left;
+height:36px;
+line-height:36px;
+color:#FFFFFF;
+}
+.Bule_style_menu ul li a:hover, .Bule_style_menu ul li a.active {
+text-decoration:none;
+background:url(images/top_nav_a_left.gif) no-repeat left top;
+color:#020202;
+}
+.Bule_style_menu ul li a:hover span, .Bule_style_menu ul li a.active span {
+background:url(images/top_nav_a_right.gif) no-repeat right top;
+color:#020202;
+}

@@ -1,0 +1,196 @@
+@CHARSET "ISO-8859-1";
+body{background-color: #A9A9A9}
+.header
+{
+	background-color: #204562;
+	height: 60px;
+	width: 100%;
+	top:0px;
+	
+}
+.headers{
+	background-color: #102947;
+	background-image: url("../css/images/SrmLogo.jpg");
+	background-repeat:no-repeat;
+	background-position:top left;	
+	height:90px;
+	width:100%;
+	top:0px;
+
+}
+.indexmain{
+	background-color: #FFFFFF;
+	top:72px;
+	height:82%;
+	width:98.3%;
+	border: groove;
+	border-left-color:#102947;
+	border-right-color:#102947;
+	border-width: medium;
+	background-repeat: repeat;
+	position:absolute;
+	}
+.login{
+	background-color: #FFFFFF;
+	top:100px;
+	height:55%;
+	width:33%;
+	left:440px;
+	border: groove;
+	border-color: black;
+	border-width: medium;
+	position:absolute;
+}
+
+ .footer{
+	background-color:#102947;
+	top:96%;
+	height:20px;
+	width:100%;
+	bottom: 0px;
+	position: absolute;
+	background-repeat: repeat;
+	
+} 
+.titlefirst
+{
+font: bold;
+color: #FFFFFF;
+font-style:inherit;
+font-family: sans-serif;
+}
+.titleright
+{
+top:0px;
+right:30%;
+left:0px;
+width:30%;
+height:60px;
+float:right;
+background-color: #fff;
+}
+.floatleft
+{
+	float: left;
+}
+.profile
+{
+	color: #97BBC9;
+	font-size: x-small;
+	font-weight: bold;
+}
+.marginleft10{margin-left:10px;}
+
+.toprightinline li{display:inline-block;
+color: #fff;
+font-size: x-small;
+}
+.small{font-size:9px;}
+
+.grey{color:#C2C2C2;}
+
+.createuser {
+ background-color: #cbc9c9;
+  margin: 20px auto;
+  width: 343px; 
+  height: 464px; 
+  -webkit-border-radius: 8px/7px; 
+  -moz-border-radius: 8px/7px; 
+  border-radius: 8px/7px; 
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  border: solid 1px #000000;
+ 
+}
+.user
+{
+ background-color: #cbc9c9;
+  left:450px;
+  top:260px;
+  width: 50%;
+  height: 60%;
+  
+  border-color: #000000 ;
+}
+
+/* .tabletitle{
+	font-size: 18px;
+	background-color: #0489B1;
+	font-weight: bold; 
+	text-shadow: silver;
+	}
+	
+	.tableheader{
+	font-size: 16px;
+	font-weight: bold; 
+	background-color: #FFEFD5;
+	}
+	
+	.tablebody{
+	font-size: 16px;
+	background-color: #FFFACD;
+	}
+	 */
+	/* Table properties */ 
+/* 	 
+.wrapper {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 800px;
+  
+   font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #3b3b3b;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.table {
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
+}
+@media screen and (max-width: 580px) {
+  .table {
+    display: block;
+  }
+}
+
+.row {
+  display: table-row;
+  background: #f6f6f6;
+}
+.row:nth-of-type(odd) {
+  background: #e9e9e9;
+}
+.row.header {
+  font-weight: 900;
+  color: #ffffff;
+  background: #ea6153;
+}
+.row.green {
+  background: #27ae60;
+}
+.row.blue {
+  background: #2980b9;
+}
+@media screen and (max-width: 580px) {
+  .row {
+    padding: 8px 0;
+    display: block;
+  }
+}
+.cell {
+  padding: 6px 12px;
+  display: table-cell;
+}
+@media screen and (max-width: 580px) {
+  .cell {
+    padding: 2px 12px;
+    display: block;
+  }
+} */
